@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfiniteBoard Pro</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="toolbar">
+        <div class="tool-group">
+            <h2 id="logo">InfiniteBoard</h2>
+            <button class="tool active" data-tool="selection">Selection</button>
+            <button class="tool" data-tool="pen">Pen</button>
+            <button class="tool" data-tool="rectangle">Rect</button>
+            <button class="tool" data-tool="ellipse">Ellipse</button>
+            <button class="tool" data-tool="arrow">Arrow</button>
+            <button class="tool" data-tool="text">Text</button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="tool-group" id="style-panel">
+            <label>Stroke <input type="color" id="strokeColor" value="#1e1e1e"></label>
+            <label>Fill <input type="color" id="fillColor" value="#ffffff"></label>
+            <button id="toggleFill">Hollow</button>
+            <select id="strokeStyle">
+                <option value="solid">Solid</option>
+                <option value="dashed">Dashed</option>
+                <option value="dotted">Dotted</option>
+            </select>
+            <input type="range" id="strokeWidth" min="1" max="20" value="2">
+            <input type="range" id="opacity" min="0.1" max="1" step="0.1" value="1">
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="tool-group">
+            <select id="bgPreset">
+                <option value="light-grid">Light Grid</option>
+                <option value="dark-grid">Dark Grid</option>
+                <option value="plain">Plain</option>
+            </select>
+            <button id="undoBtn">Undo</button>
+            <button id="exportJSON">Export JSON</button>
+            <button id="importBtn">Import</button>
+            <input type="file" id="fileInput" style="display:none" accept=".json">
+            <button id="exportSVG" class="success">Save SVG</button>
+        </div>
+    </div>
+
+    <div id="canvas-container" class="light-grid">
+        <canvas id="drawingCanvas"></canvas>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,106 @@
+:root {
+    --accent: #6965db;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: sans-serif;
+}
+
+#toolbar {
+    position: fixed;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+    padding: 10px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    align-items: center;
+}
+
+.tool-group {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    font-size: 12px;
+}
+
+.divider {
+    width: 1px;
+    height: 24px;
+    background: #ddd;
+    margin: 0 8px;
+}
+
+#logo {
+    margin: 0 10px;
+    font-size: 14px;
+    color: var(--accent);
+    font-weight: 800;
+}
+
+button {
+    padding: 6px 12px;
+    border: 1px solid transparent;
+    background: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #f0f0f0;
+}
+
+button.active {
+    background: var(--accent);
+    color: white;
+}
+
+button.success {
+    background: #28a745;
+    color: white;
+}
+
+button.danger {
+    color: red;
+}
+
+#canvas-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+#canvas-container.light-grid {
+    background-color: #f8f9fa;
+    background-image: radial-gradient(#ccc 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+#canvas-container.dark-grid {
+    background-color: #1a1a1a;
+    background-image: radial-gradient(#444 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+#canvas-container.plain {
+    background: white;
+}
+
+canvas {
+    display: block;
+    cursor: crosshair;
+}
+
+input[type="range"] {
+    width: 60px;
+}
